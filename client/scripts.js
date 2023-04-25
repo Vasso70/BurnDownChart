@@ -39,8 +39,8 @@ $(function() {
   });
 
   const buildBurndownChart = (sprintName, chartType, days, idealBurnData, actualBurnData) => {
-    const startDate = new Date($('#startDate').val() || '1/01/2020');
-    const endDate = new Date($('#endDate').val() || '1/14/2020');
+    const startDate = new Date($('#startDate').val() || '6/01/2023');
+    const endDate = new Date($('#endDate').val() || '7/31/2023');
 
     $('#burndown').highcharts({
       title: {
@@ -84,12 +84,12 @@ $(function() {
         borderWidth: 0
       },
       series: [{
-        name: 'Ideal Burn',
+        name: 'Идеальный',
         color: 'rgba(255,0,0,0.25)',
         lineWidth: 2,
         data: idealBurnData
       }, {
-        name: 'Actual Burn',
+        name: 'Фактический',
         color: 'rgba(0,120,200,0.75)',
         marker: {
           radius: 6
@@ -99,10 +99,10 @@ $(function() {
     });
   }
 
-  const sampleDays = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
-    'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12'];
-  const sampleIdealData = [110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
-  const sampleActualData = [100, 110, 125, 95, 64, 76, 62, 44, 35, 29, 18, 2];
+  const sampleDays = ['День 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6',
+    'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13'];
+  const sampleIdealData = [110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, 0];
+  const sampleActualData = [100, 110, 125, 95, 64, 76, 62, 44, 35, 29, 18, 2, 2];
 
-  buildBurndownChart('Burndown Chart', 'Storypoints', sampleDays, sampleIdealData, sampleActualData);
+  buildBurndownChart('Название', 'Storypoints', sampleDays, sampleIdealData, sampleActualData);
 });
